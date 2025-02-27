@@ -15,7 +15,7 @@ if (getCookie("login") != undefined) {
 
 authBtn.onclick = function() {
 	if (login.value === "savur" && pass.value === "123") {
-		document.cookie = "user=savur; max-age=3600";
+		document.cookie = "login=savur; max-age=3600";
 		window.location.href = 'index.html';
 	} else {
 		alert("Неверный логин или пароль!");
