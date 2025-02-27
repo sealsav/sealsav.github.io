@@ -5,8 +5,19 @@ function getCookie(name) {
 	return matches ? decodeURIComponent(matches[1]) : undefined;
 }
 
-if (getCookie(login) != undefined) {
-	alert("hello");
-} else {
-	alert("good");
+login = document.querySelector('#login');
+pass = document.querySelector('#pass');
+authBtn = document.querySelector('#authbtn');
+
+if (getCookie("login") != undefined) {
+	window.location.href = 'index.html';
 }
+
+authBtn.onclick = function() {
+	if (login.value === "savur" && pass.value === "123") {
+		document.cookie = "user=savur; max-age=3600";
+		window.location.href = 'index.html';
+	} else {
+		alert("Неверный логин или пароль!");
+	}
+};
